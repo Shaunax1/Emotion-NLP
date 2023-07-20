@@ -94,6 +94,15 @@ rf.fit(x_train,y_train)
 
 print("accuracy : " , rf.score(x_test, y_test))
 
+#%% Confusion Matrix
+y_pred = nb.predict(x)
+from sklearn.metrics import confusion_matrix
+
+conf_matrix = confusion_matrix(y, y_pred, normalize='true')
+plt.figure(figsize=(10, 5))
+sns.heatmap(conf_matrix, annot=True, fmt='.4f')
+plt.show()
+
 
 
 
